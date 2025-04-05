@@ -71,6 +71,11 @@ button:focus-visible {
 }
 
 
+.card-body {
+  height: 200px;
+ 
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

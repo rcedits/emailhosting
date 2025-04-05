@@ -49,7 +49,7 @@ const Home = () => {
                 src={banner1}
                 alt="Banner"
                 className="img-fluid w-100"
-                style={{ height: "400px", objectFit: "cover" }}
+                style={{ height: "600px", objectFit: "cover" }}
               />
               <div
                 className="position-absolute top-50 start-50 translate-middle text-center"
@@ -68,7 +68,7 @@ const Home = () => {
                 src={banner2}
                 alt="Banner"
                 className="img-fluid w-100"
-                style={{ height: "400px", objectFit: "cover" }}
+                style={{ height: "600px", objectFit: "cover" }}
               />
               <div
                 className="position-absolute top-50 start-50 translate-middle text-center"
@@ -86,12 +86,11 @@ const Home = () => {
       {/* === Main Content Section === */}
       <div className="container">
         <div className="row">
-          <div className="col-md-6 text-center mt-4 mb-4">
-            <img src="images/about.jpg" alt="Banner" className="img-fluid about-banner" style={{ maxWidth: "100%", height: "auto" }} />
+          <div className="col-md-6 text-center mt-5 mb-4">
+            <img src="images/about.jpg" alt="Banner" className="img-fluid about-banner" style={{ maxWidth: "80%", height: "auto" }} />
           </div>
           <div className="col-md-6 text-left mt-4 mb-4">
             <h3 className="mt-4">Welcome to Email Hosting</h3>
-            <p>We provide reliable and secure email hosting services.</p>
             <p>Our email hosting services include:</p>
             <ul>
               <li>Custom domain email addresses</li>
