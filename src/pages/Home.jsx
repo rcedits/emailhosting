@@ -79,15 +79,15 @@ const Home = () => {
                 <button className="btn btn-light mt-2">Learn More</button>
               </div>
             </div>
-          </SwiperSlide>
+          </SwiperSlide> 
         </Swiper>
       </div>
 
       {/* === Main Content Section === */}
-      <div className="container">
+      <div className="container mb-5">
         <div className="row">
           <div className="col-md-6 text-center mt-5 mb-4">
-            <img src="images/about.jpg" alt="Banner" className="img-fluid about-banner" style={{ maxWidth: "80%", height: "auto" }} />
+            <img src="images/bg1.png" alt="Banner" className="img-fluid about-banner" style={{ maxWidth: "80%", height: "auto" }} />
           </div>
           <div className="col-md-6 text-left mt-4 mb-4">
             <h3 className="mt-4">Welcome to Email Hosting</h3>
