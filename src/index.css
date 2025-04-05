@@ -117,3 +117,7 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.about-banner{
+  border-radius: 30px;
+}

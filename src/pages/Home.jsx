@@ -32,6 +32,7 @@ const Home = () => {
     <>
       {/* === Swiper Section === */}
       <div className="section">
+
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
           spaceBetween={30}
@@ -43,27 +44,66 @@ const Home = () => {
           loop={true}
         >
           <SwiperSlide>
-            <img src={banner1} alt="Banner 1" className="w-100" />
+            <div className="position-relative text-white">
+              <img
+                src={banner1}
+                alt="Banner"
+                className="img-fluid w-100"
+                style={{ height: "400px", objectFit: "cover" }}
+              />
+              <div
+                className="position-absolute top-50 start-50 translate-middle text-center"
+                style={{ zIndex: 2 }}
+              >
+                <h2 className="mb-3">Welcome to Email Hosting</h2>
+                <p>Reliable & Secure Email Solutions</p>
+                <button className="btn btn-primary mt-2">Get Started</button>
+              </div>
+            </div>
           </SwiperSlide>
+
           <SwiperSlide>
-            <img src={banner2} alt="Banner 2" className="w-100" />
+            <div className="position-relative text-white">
+              <img
+                src={banner2}
+                alt="Banner"
+                className="img-fluid w-100"
+                style={{ height: "400px", objectFit: "cover" }}
+              />
+              <div
+                className="position-absolute top-50 start-50 translate-middle text-center"
+                style={{ zIndex: 2 }}
+              >
+                <h2 className="mb-3">Fast, Secure, Scalable</h2>
+                <p>Power your business with professional email</p>
+                <button className="btn btn-light mt-2">Learn More</button>
+              </div>
+            </div>
           </SwiperSlide>
         </Swiper>
       </div>
-  
+
       {/* === Main Content Section === */}
       <div className="container">
-        <h1 className="mt-4">Welcome to Email Hosting</h1>
-        <p>We provide reliable and secure email hosting services.</p>
-        <p>Our email hosting services include:</p>
-        <ul>
-          <li>Custom domain email addresses</li>
-          <li>Advanced spam and virus protection</li>
-          <li>24/7 customer support</li>
-          <li>High availability and uptime</li>
-          <li>Easy integration with other tools and services</li>
-        </ul>
-  
+        <div className="row">
+          <div className="col-md-6 text-center mt-4 mb-4">
+            <img src="images/about.jpg" alt="Banner" className="img-fluid about-banner" style={{ maxWidth: "100%", height: "auto" }} />
+          </div>
+          <div className="col-md-6 text-left mt-4 mb-4">
+            <h3 className="mt-4">Welcome to Email Hosting</h3>
+            <p>We provide reliable and secure email hosting services.</p>
+            <p>Our email hosting services include:</p>
+            <ul>
+              <li>Custom domain email addresses</li>
+              <li>Advanced spam and virus protection</li>
+              <li>24/7 customer support</li>
+              <li>High availability and uptime</li>
+              <li>Easy integration with other tools and services</li>
+            </ul>
+          </div>
+        </div>
+
+
         <div className="row">
           {posts.map((post) => (
             <div key={post.id} className="col-md-4 mb-4">
@@ -71,7 +111,7 @@ const Home = () => {
             </div>
           ))}
         </div>
-  
+
         <div className="d-flex justify-content-center mt-3">
           <button
             className="btn btn-primary me-2"
@@ -91,7 +131,7 @@ const Home = () => {
       </div>
     </>
   );
-  
+
 };
 
 export default Home;
