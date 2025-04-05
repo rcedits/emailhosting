@@ -1,4 +1,3 @@
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -9,7 +8,7 @@ import Contact from "./pages/Contact";
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/react">
       <Header />
       <main>
         <Routes>
@@ -25,5 +24,3 @@ const App = () => {
 };
 
 export default App;
-
- 

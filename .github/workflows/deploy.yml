@@ -1,0 +1,47 @@
+name: 🚀 Deploy React application on push
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  web-deploy:
+    name: 🎉 Deploy website
+    runs-on: ubuntu-latest
+    steps:
+     
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Debug SSH connection
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh -p 6789 -o StrictHostKeyChecking=no -v ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "ls -la"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install Dependencies and Build 📦
+        run: |
+          npm i  --force
+          npm run build
+
+      - name: 📂 Deploy via rsync
+        uses: burnett01/rsync-deployments@7.0.2
+        with:
+          switches: -avzr --delete
+          path: dist/
+          remote_path: ${{ secrets.DEPLOY_PATH }}
+          remote_host: ${{ secrets.DEPLOY_HOST }}
+          remote_user: ${{ secrets.DEPLOY_USER }}
+          remote_port: ${{ secrets.DEPLOY_PORT }}
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          legacy_allow_rsa_hostkeys: "true"
